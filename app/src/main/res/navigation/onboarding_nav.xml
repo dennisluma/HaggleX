@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/onboarding_nav"
+    app:startDestination="@id/registrationFragment">
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.dennisiluma.hagglex.RegistrationFragment"
+        android:label="RegistrationFragment" >
+        <action
+            android:id="@+id/action_registrationFragment_to_verifyEmailFragment"
+            app:destination="@id/verifyEmailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.dennisiluma.hagglex.LoginFragment"
+        android:label="LoginFragment" />
+    <fragment
+        android:id="@+id/verifyEmailFragment"
+        android:name="com.dennisiluma.hagglex.VerifyEmailFragment"
+        android:label="VerifyEmailFragment" >
+        <action
+            android:id="@+id/action_verifyEmailFragment_to_setupCompleteFragment"
+            app:destination="@id/setupCompleteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupCompleteFragment"
+        android:name="com.dennisiluma.hagglex.SetupCompleteFragment"
+        android:label="fragment_setup_complete"
+        tools:layout="@layout/fragment_setup_complete" >
+        <action
+            android:id="@+id/action_setupCompleteFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>
