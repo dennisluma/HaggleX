@@ -1,5 +1,6 @@
 package com.dennisiluma.hagglex
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,6 +25,11 @@ class SetupCompleteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.StartExploring.setOnClickListener {
+            val intent = Intent(requireContext(),DashboardActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
     }
 
     override fun onDestroyView() {

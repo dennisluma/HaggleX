@@ -59,23 +59,22 @@ dependencies {
 
     implementation("com.apollographql.apollo:apollo-runtime:2.5.9")
     implementation("com.apollographql.apollo:apollo-coroutines-support:2.5.9")
-    def nav_version = "2.3.5"
 
     //Navigation Component Dependencies
-    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
     //Safe args
-    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
 
     //Apollo
     implementation("com.apollographql.apollo:apollo-runtime:2.5.9")
     implementation("com.apollographql.apollo:apollo-coroutines-support:2.5.9")
 
     //ViewModel
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+//    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+//    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
 
 }
 

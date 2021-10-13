@@ -123,5 +123,18 @@
         </androidx.cardview.widget.CardView>
 
 
+        <ProgressBar
+            android:id="@+id/verifyemail_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:backgroundTint="@color/white"
+            android:elevation="20dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:indeterminateDrawable="@drawable/progressbar_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/cardview"
+            app:layout_constraintEnd_toEndOf="@+id/cardview"
+            app:layout_constraintStart_toStartOf="@+id/cardview"
+            app:layout_constraintTop_toTopOf="@+id/cardview" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
