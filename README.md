@@ -1,6 +1,8 @@
 # HaggleX
 It implements the login, logout, and resend verification code functionalities using GraphQL API
 
+# NOTE: Switch to working-directrory for all logic and implementations
+
 # Screens
 ![screenR](https://user-images.githubusercontent.com/64640469/137226236-3920e06d-7ffa-4dc2-aa3f-e221ecd1cd2b.png)
 ![screenA](https://user-images.githubusercontent.com/64640469/137226244-e7de87d0-4c35-4cd8-9428-6b6651491a97.png)
