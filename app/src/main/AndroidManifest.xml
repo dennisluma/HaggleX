@@ -5,9 +5,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/splash_icon_icon"
+        android:icon="@drawable/splash_icon"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/splash_icon_icon"
+        android:roundIcon="@drawable/splash_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.HaggleX">
         <activity
@@ -15,15 +15,17 @@
             android:exported="true" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
         </activity>
     </application>
 

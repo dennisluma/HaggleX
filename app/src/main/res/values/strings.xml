@@ -2,4 +2,27 @@
     <string name="app_name">HaggleX</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_to_dashboard">Welcome To Dashboard</string>
+    <string name="hagglex">HaggleX</string>
+    <string name="welcome">Welcome!</string>
+    <string name="email_address">Email Address</string>
+    <string name="password_min_8_characters">Password (Min 8 Characters)</string>
+    <string name="login">Login</string>
+    <string name="new_user_create_a_new_account">New User? Create a new Account</string>
+    <string name="create_a_new_account">Create a new Account</string>
+    <string name="email_address">Email Address</string>
+    <string name="password_min_8_characters">Password (Min 8 Characters)</string>
+    <string name="create_a_username">Create a username</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="referral_code_optional">Referral code (optional)</string>
+    <string name="by_signing_you_agree_to_hagglex_terms_and_privacy_policy">By Signing, you agree to HaggleX terms and privacy policy.</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="setup_complete">Setup Complete</string>
+    <string name="thank_you_for_setting_up_your_hagglex_account">Thank you for setting up your HaggleX Account</string>
+    <string name="start_exploring">Start Exploring</string>
+    <string name="verify_your_account">Verify Your Account</string>
+    <string name="we_just_sent_a_verification_code_to_your_email_please_enter_the_code">We just sent a verification code to your email. Please, enter the code</string>
+    <string name="verify_me">Verify Me</string>
+    <string name="this_code_will_expire_in_10mins">This code will expire in 10mins</string>
+    <string name="resend_code">Resend Code</string>
 </resources>

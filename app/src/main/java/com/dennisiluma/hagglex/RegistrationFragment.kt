@@ -104,8 +104,8 @@ class RegistrationFragment : Fragment() {
             snackBarMessage("Please, input your valid email")
             return false
         }
-        if (password.length < 9) {
-            snackBarMessage("Password lengths must be greater than 8")
+        if (password.length < 8) {
+            snackBarMessage("Password lengths must be greater than 7")
             return false
         }
         if(username.isEmpty() && phoneNumber.isEmpty() && country.isEmpty()){

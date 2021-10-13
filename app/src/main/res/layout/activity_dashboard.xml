@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Welcome To Dashboard"
-        android:textSize="30dp"
+        android:text="@string/welcome_to_dashboard"
+        android:textSize="@dimen/sp_30"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

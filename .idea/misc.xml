@@ -16,7 +16,7 @@
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_registration.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_setup_complete.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_setup_complete.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_verify_email.xml" value="0.4358974358974359" />
       </map>
     </option>

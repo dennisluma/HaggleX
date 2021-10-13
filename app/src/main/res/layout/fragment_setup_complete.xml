@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="123dp"
+        android:layout_marginTop="@dimen/dp123"
         android:background="@drawable/round_shape"
         android:src="@drawable/ic_verifi" />
 
@@ -23,19 +23,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Setup Complete"
+        android:layout_marginTop="@dimen/dp20"
+        android:text="@string/setup_complete"
         android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textSize="@dimen/sp18" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Thak you for setting up your HaggleX Account"
+        android:text="@string/thank_you_for_setting_up_your_hagglex_account"
         android:textColor="@color/white"
-        android:textSize="9sp" />
+        android:textSize="@dimen/sp9"
+        tools:ignore="SmallSp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/StartExploring"
@@ -45,8 +46,8 @@
         android:layout_marginTop="98dp"
         android:background="@drawable/buttonshape"
         android:backgroundTint="@color/button_login_color"
-        android:padding="20dp"
-        android:text="Start Exploring"
+        android:padding="@dimen/dp20"
+        android:text="@string/start_exploring"
         android:textColor="@color/black"
         android:textSize="14sp" />
 
