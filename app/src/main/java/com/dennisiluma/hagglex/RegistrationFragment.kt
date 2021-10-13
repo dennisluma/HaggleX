@@ -8,17 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.apollographql.apollo.api.Input
 import com.apollographql.apollo.coroutines.await
 import com.dennisiluma.hagglex.databinding.FragmentRegistrationBinding
 import com.dennisiluma.hagglex.utils.SharedPreferenceManager
 import com.dennisiluma.hagglex.utils.util.snackBarMessage
-import com.hagglex.graphql.LoginMutation
 import com.hagglex.graphql.RegisterMutation
 import com.hagglex.graphql.type.CreateUserInput
-import com.hagglex.graphql.type.LoginInput
 import kotlinx.coroutines.launch
 
 class RegistrationFragment : Fragment() {
