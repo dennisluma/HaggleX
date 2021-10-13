@@ -11,6 +11,7 @@ import com.dennisiluma.hagglex.databinding.FragmentVerifyEmailBinding
 class VerifyEmailFragment : Fragment() {
     private var _binding: FragmentVerifyEmailBinding? = null
     private val binding get() = _binding!!
+    private var email:String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,6 +25,8 @@ class VerifyEmailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        /*Get email value from nav args coming from registration fragment*/
+        email = arguments?.getString("email")
     }
 
     override fun onDestroyView() {

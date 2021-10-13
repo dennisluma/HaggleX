@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id("com.apollographql.apollo").version("2.5.9")
     id 'androidx.navigation.safeargs.kotlin'
 }
 
@@ -26,7 +27,6 @@ android {
     }
     buildFeatures{
         viewBinding true
-        dataBinding true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -56,4 +56,29 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
     // Feature module Support
     implementation "androidx.navigation:navigation-dynamic-features-fragment:2.3.5"
+
+    implementation("com.apollographql.apollo:apollo-runtime:2.5.9")
+    implementation("com.apollographql.apollo:apollo-coroutines-support:2.5.9")
+    def nav_version = "2.3.5"
+
+    //Navigation Component Dependencies
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    //Safe args
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    //Apollo
+    implementation("com.apollographql.apollo:apollo-runtime:2.5.9")
+    implementation("com.apollographql.apollo:apollo-coroutines-support:2.5.9")
+
+    //ViewModel
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+
+}
+
+apollo {
+    generateKotlinModels.set(true)
 }

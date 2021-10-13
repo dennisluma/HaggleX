@@ -6,8 +6,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.apollographql.apollo.api.Input
+import com.apollographql.apollo.coroutines.await
 import com.dennisiluma.hagglex.databinding.FragmentRegistrationBinding
+import com.dennisiluma.hagglex.utils.SharedPreferenceManager
 import com.dennisiluma.hagglex.utils.util.snackBarMessage
+import com.hagglex.graphql.LoginMutation
+import com.hagglex.graphql.RegisterMutation
+import com.hagglex.graphql.type.CreateUserInput
+import com.hagglex.graphql.type.LoginInput
+import kotlinx.coroutines.launch
 
 class RegistrationFragment : Fragment() {
     private var _binding: FragmentRegistrationBinding? = null
@@ -51,7 +63,39 @@ class RegistrationFragment : Fragment() {
         country: String
     ) {
         if (validateUser(email, password,username,phoneNumber,country)) {
-            TODO("Implement logic")
+            val user = CreateUserInput(
+                email = email,
+                username = username,
+                password = password,
+                phonenumber = phoneNumber,
+                referralCode = Input.fromNullable(referralCode),
+                country = "Nigeria",
+                currency = "Dollar"
+            )
+            lifecycleScope.launch {
+                val response = try {
+                    /*Use apollo client to send our data to graphql API and handles the results and exceptions that follows */
+                    getApolloClient(requireContext()).mutate(RegisterMutation(data = user)).await()
+                } catch (e: Exception) {
+                    throw java.lang.Exception(e)
+                }
+
+                val registerObject = response.data?.register
+                //the registerObject is an object that contains a generated token and user details from api
+
+                if (registerObject == null || response.hasErrors()) {
+                    snackBarMessage("${response.errors?.get(0)?.message}")
+                    binding.registrationProgressbar.visibility = View.GONE
+                } else {
+                    binding.registrationProgressbar.visibility = View.GONE
+                    snackBarMessage("Registration is Successful")
+                    SharedPreferenceManager(requireContext()).saveToken(registerObject.token)
+                        /* if response is successful, collect our email input and navigate to verifyemail fragment*/
+                    val bundle = bundleOf("email" to email)
+                    findNavController().navigate(R.id.verifyEmailFragment, bundle)
+
+                }
+            }
         }
     }
     // Function to validate user input
@@ -63,6 +107,10 @@ class RegistrationFragment : Fragment() {
         if (password.length < 9) {
             snackBarMessage("Password lengths must be greater than 8")
             return false
+        }
+        if(username.isEmpty() && phoneNumber.isEmpty() && country.isEmpty()){
+            return false
+
         }
         return true
     }

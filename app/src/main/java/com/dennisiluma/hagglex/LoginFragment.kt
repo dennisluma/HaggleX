@@ -1,13 +1,19 @@
 package com.dennisiluma.hagglex
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.apollographql.apollo.coroutines.await
 import com.dennisiluma.hagglex.databinding.FragmentLoginBinding
 import com.dennisiluma.hagglex.utils.util.snackBarMessage
+import com.hagglex.graphql.LoginMutation
+import com.hagglex.graphql.type.LoginInput
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
@@ -44,6 +50,27 @@ class LoginFragment : Fragment() {
         if (email.isEmpty() || password.isEmpty()) {
             snackBarMessage("Fields should not be empty")
             return
+        }
+        else {
+            lifecycleScope.launchWhenResumed {
+                val response = try {
+                    getApolloClient(requireContext()).mutate(LoginMutation(LoginInput(email, password))).await()
+                }
+                catch (e: Exception){
+                    throw IllegalStateException(e)
+                }
+                val login = response.data?.login
+                if (login == null || response.hasErrors()){
+
+                    snackBarMessage("${response?.errors?.get(0)?.message}")
+                }
+                else{
+                    snackBarMessage("Login Successful")
+                    val intent = Intent(requireContext(), DashboardActivity::class.java)
+                    startActivity(intent)
+                    requireActivity().finish()
+                }
+            }
         }
     }
 

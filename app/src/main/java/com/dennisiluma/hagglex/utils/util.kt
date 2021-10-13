@@ -9,3 +9,5 @@ object util {
     }
 
 }
+
+const val USERTOKEN = ""

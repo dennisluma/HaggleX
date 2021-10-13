@@ -7,6 +7,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.dennisiluma.hagglex.LoginFragment"
+        tools:layout="@layout/fragment_login"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
@@ -15,7 +16,8 @@
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.dennisiluma.hagglex.RegistrationFragment"
-        android:label="RegistrationFragment" >
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration" >
         <action
             android:id="@+id/action_registrationFragment_to_verifyEmailFragment"
             app:destination="@id/verifyEmailFragment" />
@@ -23,6 +25,7 @@
     <fragment
         android:id="@+id/verifyEmailFragment"
         android:name="com.dennisiluma.hagglex.VerifyEmailFragment"
+        tools:layout="@layout/fragment_verify_email"
         android:label="VerifyEmailFragment" >
         <action
             android:id="@+id/action_verifyEmailFragment_to_setupCompleteFragment"
